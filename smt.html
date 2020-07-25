@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+   
+    <style>
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('/Users/iri/Desktop/study/tv-series.jpg');
+    background-size: cover ;
+    font-family: 'PT Serif', serif;
+}
+header, footer {
+    width: auto;
+    height: 50px;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    text-align: center;
+}
+#container {
+    width: 600px;
+    margin: 50px auto;
+    background-color:white;
+    padding: 20px 20px;
+
+}
+
+#search {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    padding: 20px 50px;
+    align-items: center;
+    margin: 0 auto;
+   
+}
+
+#search label {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+}
+
+.name {
+    width: 100px;
+    text-align: center;
+    list-style: none;
+    padding: 5px 10px;
+    background-color: rgb(44, 44, 44);
+    color:lavender;
+    margin: 5px 0;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+<h1>Favorite tv-shows list</h1>
+    </header>
+    <div id="container">
+        <div id="search">
+            <label for="searchInput">Search series</label>
+            <input id="searchInput" type="text">
+        </div>
+        <ul id="results">
+            <li class="name">Game of Thrones</li>
+            <li class="name">Sherlock</li>
+            <li class="name">Friends</li>
+            <li class="name">Breaking Bad</li>
+            <li class="name">House M.D.</li>
+            <li class="name">Supernatural</li>
+            <li class="name">Rick and Morty</li>
+            <li class="name">Stranger Things</li>
+            <li class="name">Walking Dead</li>
+            <li class="name">True Detective</li>
+            <li class="name">Gravity Falls</li>
+            <li class="name">Scrubs</li>
+            <li class="name">Black Mirror</li>
+            <li class="name">Shameless</li>
+            <li class="name">True Blood</li>
+            <li class="name">Preacher</li>
+            <li class="name">Dexter</li>
+            <li class="name">Westworld</li>
+            <li class="name">Killing Eve</li>
+            <li class="name">American Horror Story</li>
+            <li class="name">Fargo</li>
+            <li class="name">Rami</li>
+            <li class="name">Charmed</li>
+            <li class="name">Twin Peaks</li>
+            <li class="name">Sex Education</li>
+            <li class="name">Hannibal</li>
+            <li class="name">Family Guy</li>
+            <li class="name">Mentalist</li>
+        </ul>
+        
+    </div>
+    <footer>
+
+    </footer>
+    <script>
+
+
+document.getElementById("searchInput").addEventListener("keyup", function(event) {
+    let query = event.target.value.toLowerCase();
+
+    let names = document.getElementsByClassName("name");
+
+    for ( let i = 0; i < names.length; i++ ) {
+        names[i].style.display = "none";
+       if  (names[i].textContent.toLocaleLowerCase().indexOf(query) >= 0) {
+            names[i].style.display = "inline-block";  
+       } 
+    }
+    
+})
+    </script>
+</body>
+</html>
