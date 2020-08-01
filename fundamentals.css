@@ -2,7 +2,9 @@
 .card {
     background: #000;
     color: white;
-    width: 560px;
+    width: 56%;
+    max-width: 600px;
+    min-width: 300px;
     margin: 0 auto;
     padding: 45px;
     border: 10px solid white;
@@ -23,9 +25,10 @@ p {
     margin-top: 40x;
     margin-bottom: 0;
 }
-a {
+p.links {
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 }
 
 
